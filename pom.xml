@@ -28,6 +28,10 @@
 	</properties>
 
 	<modules>
+		<module>org.knime.ext.sun</module>
+		<module>org.knime.jsnippets</module>
+		<!-- <module>org.knime.jsnippets.tests</module> -->
+		<module>org.knime.update.javasnippet</module>
 	</modules>
 
 	<repositories>
