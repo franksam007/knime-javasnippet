@@ -19,12 +19,16 @@
 	<properties>
 		<!--
 			Use Jenkins's project parameterization capabilities to set a string 
-			parameter named KNIME_TARGET_PLATFORM_URL to the desired P2 update site value. 
-			For building locally you can set KNIME_TARGET_PLATFORM_URL in the respective 
+			parameter named KNIME_TP_P2 to the desired P2 update site value. 
+			For building locally you can set KNIME_TP_P2 in the respective 
 			run configuration 'Environment' tab with a file:// or http:// URL value pointing 
 			to the desired P2 update site.
 		-->
-		<knime.target.platform.url>${env.KNIME_TARGET_PLATFORM_URL}</knime.target.platform.url>
+		<knime.base.p2>${env.KNIME_BASE_P2}</knime.base.p2>
+		<knime.core.p2>${env.KNIME_CORE_P2}</knime.core.p2>
+		<knime.expressions.p2>${env.KNIME_EXPRESSIONS_P2}</knime.expressions.p2>
+		<knime.shared.p2>${env.KNIME_SHARED_P2}</knime.shared.p2>
+		<knime.tp.p2>${env.KNIME_TP_P2}</knime.tp.p2>
 	</properties>
 
 	<modules>
@@ -36,9 +40,29 @@
 
 	<repositories>
 		<repository>
-			<id>org.knime.update.org</id>
+			<id>knime.base.p2</id>
 			<layout>p2</layout>
-			<url>${knime.target.platform.url}</url>
+			<url>${knime.base.p2}</url>
+		</repository>
+		<repository>
+			<id>knime.core.p2</id>
+			<layout>p2</layout>
+			<url>${knime.core.p2}</url>
+		</repository>
+		<repository>
+			<id>knime.expressions.p2</id>
+			<layout>p2</layout>
+			<url>${knime.expressions.p2}</url>
+		</repository>
+		<repository>
+			<id>knime.shared.p2</id>
+			<layout>p2</layout>
+			<url>${knime.shared.p2}</url>
+		</repository>
+		<repository>
+			<id>knime.tp.p2</id>
+			<layout>p2</layout>
+			<url>${knime.tp.p2}</url>
 		</repository>
 	</repositories>
 </project>
